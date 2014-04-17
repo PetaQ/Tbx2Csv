@@ -1,4 +1,4 @@
 Tbx2Csv
 =======
 
-Convert Tbx (TermBase eXchange) to CSV (Comma-separated values) Files. Further information will follow soon.
+Convert a Terminology Collection (Tbx File) to CSV (Comma-separated values) File/s. Further information will follow soon.
