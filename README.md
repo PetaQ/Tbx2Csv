@@ -1,4 +1,4 @@
 Tbx2Csv
 =======
 
-Convert Tbx Files to CSV. Further information will follow soon.
+Convert Tbx (TermBase eXchange) to CSV (Comma-separated values) Files. Further information will follow soon.
