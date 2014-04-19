@@ -8,7 +8,7 @@
         /// <summary>
         ///     Static Field Instance
         /// </summary>
-        public static Logger Instance { get; set; }
+        private static Logger Instance = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         ///     Write Message to LogFile
@@ -18,24 +18,19 @@
         {
             try
             {
-                Instance = LogManager.GetCurrentClassLogger();
-
-                if (Instance != null)
+                if (!string.IsNullOrEmpty(message) && !string.IsNullOrEmpty(category))
                 {
-                    if (!string.IsNullOrEmpty(message) && !string.IsNullOrEmpty(category))
+                    switch (category)
                     {
-                        switch(category)
-                        {
-                            case "DEBUG":
-                                Instance.Debug(message);
-                                break;
-                            case "INFO":
-                                Instance.Info(message);
-                                break;
-                            case "FATAL":
-                                Instance.Fatal(message);
-                                break;
-                        }
+                        case "DEBUG":
+                            Instance.Debug(message);
+                            break;
+                        case "INFO":
+                            Instance.Info(message);
+                            break;
+                        case "FATAL":
+                            Instance.Fatal(message);
+                            break;
                     }
                 }
                 return;
