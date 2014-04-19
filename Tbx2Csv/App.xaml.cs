@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace Tbx2Csv
+﻿namespace Tbx2Csv
 {
+    using System.Windows;
+
+    using Logic;
+
     /// <summary>
     /// Interaktionslogik für "App.xaml"
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Log.Write("INFO", "Start Application");
+        }
     }
 }

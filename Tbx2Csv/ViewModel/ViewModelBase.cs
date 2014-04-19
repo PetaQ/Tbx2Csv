@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tbx2Csv.ViewModel
+﻿namespace Tbx2Csv.ViewModel
 {
-    class ViewModelBase
+    using Logic;
+
+    public class ViewModelBase
     {
+        /// <summary>
+        ///     Log Message to ApplicationLogFile
+        /// </summary>
+        /// <param name="message"></param>
+        public void LogWrite(string category, string message)
+        {
+            Log.Write(category.ToUpper(), message);
+        }
     }
 }
