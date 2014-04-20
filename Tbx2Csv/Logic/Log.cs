@@ -2,8 +2,9 @@
 {
     using NLog;
     using System;
+    using Tbx2Csv.DataTypes.DepInjection;
 
-    public static class Log
+    public class Log : ILog
     {
         /// <summary>
         ///     Static Field Instance
@@ -14,7 +15,7 @@
         ///     Write Message to LogFile
         /// </summary>
         /// <param name="message">String Message</param>
-        public static void Write(string category, string message)
+        public void Write(string category, string message)
         {
             try
             {
