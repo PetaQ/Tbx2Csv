@@ -7,7 +7,7 @@
     {
         public MainWindowViewModel()
         {
-            base.DisplayName = "MainWindowViewModel";
+            base.DisplayName = "Tbx2Csv";
         }
     }
 }

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:Tbx2Csv.ViewModel"
         xmlns:v="clr-namespace:Tbx2Csv.View"
-        Title="Tbx2Csv" Height="350" Width="525">
+        Title="{Binding Path=DisplayName}" Height="350" Width="525">
     <Grid>
         <TextBlock Text="{Binding Path=DisplayName}"/>
     </Grid>

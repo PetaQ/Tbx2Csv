@@ -14,8 +14,6 @@
     /// </summary>
     public partial class App : Application
     {
-        private MainView m_view;
-
         public App()
         {
             DepInj.Container.Resolve<ILog>().Write("INFO", "Start Application");
