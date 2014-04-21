@@ -1,17 +1,13 @@
-﻿namespace Tbx2Csv.View
+﻿namespace Tbx2Csv.ViewModel
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Tbx2Csv.ViewModel;
 
     public class MainViewModel : ViewModelBase
     {
         public MainViewModel()
         {
-
+            base.DisplayName = "MainViewModel";
         }
     }
 }

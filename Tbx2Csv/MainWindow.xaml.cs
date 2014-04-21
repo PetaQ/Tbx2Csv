@@ -9,10 +9,9 @@
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(MainViewModel model)
+        public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = model;
         }
     }
 }

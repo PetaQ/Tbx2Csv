@@ -8,6 +8,11 @@
     public class ViewModelBase
     {
         /// <summary>
+        ///     Display Name of the MVVM ViewMode
+        /// </summary>
+        public string DisplayName { get; set; }
+
+        /// <summary>
         ///     PropertyChangedEventHandler
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
