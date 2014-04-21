@@ -1,4 +1,4 @@
-﻿namespace Tbx2Csv.Logic
+﻿namespace Tbx2Csv.Logic.Logging
 {
     using NLog;
     using System;
@@ -31,6 +31,9 @@
                             break;
                         case "FATAL":
                             Instance.Fatal(message);
+                            break;
+                        case "ERROR":
+                            Instance.Error(message);
                             break;
                     }
                 }

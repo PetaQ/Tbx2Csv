@@ -1,7 +1,7 @@
 ﻿namespace Tbx2Csv.ViewModel
 {
     using System;
-    using Tbx2Csv.ViewModel;
+    using System.Windows;
 
     public class MainViewModel : ViewModelBase
     {

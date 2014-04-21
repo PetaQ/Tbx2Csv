@@ -2,9 +2,10 @@
 {
     using LightCore;
     using LightCore.Lifecycle;
-    
+
+    using Tbx2Csv.ViewModel;
     using Tbx2Csv.DataTypes.DepInjection;
-    using Tbx2Csv.Logic;
+    using Tbx2Csv.Logic.Logging;
 
     public static class DepInj
     {
@@ -36,6 +37,8 @@
             var builder = new ContainerBuilder();
 
             builder.Register<ILog, Log>().ControlledBy<SingletonLifecycle>();
+            builder.Register<IMainWindow, MainWindow>();
+            builder.Register<IMainWindowViewModel, MainWindowViewModel>();
 
             m_container = builder.Build();
         }

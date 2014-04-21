@@ -71,7 +71,11 @@
     </ApplicationDefinition>
     <Compile Include="DataTypes\DepInj.cs" />
     <Compile Include="DataTypes\DepInjection\ILog.cs" />
-    <Compile Include="Logic\Log.cs" />
+    <Compile Include="DataTypes\DepInjection\IMainWindow.cs" />
+    <Compile Include="Logic\Logging\Log.cs" />
+    <Compile Include="Logic\Tbx\TbxConverter.cs" />
+    <Compile Include="DataTypes\DepInjection\IMainWindowViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\MainView.xaml.cs">
@@ -130,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTypes\Contracts\" />
+    <Folder Include="Logic\Csv\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

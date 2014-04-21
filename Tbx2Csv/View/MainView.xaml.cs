@@ -9,10 +9,9 @@
     /// </summary>
     public partial class MainView : UserControl
     {
-        public MainView(MainViewModel viewmodel)
+        public MainView()
         {
             InitializeComponent();
-            this.DataContext = viewmodel;
         }
     }
 }
