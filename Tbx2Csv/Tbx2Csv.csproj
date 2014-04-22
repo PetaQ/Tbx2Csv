@@ -72,6 +72,7 @@
     <Compile Include="DataTypes\DepInj.cs" />
     <Compile Include="DataTypes\DepInjection\ILog.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindow.cs" />
+    <Compile Include="Logic\App\AppStatic.cs" />
     <Compile Include="Logic\Logging\Log.cs" />
     <Compile Include="Logic\Tbx\TbxConverter.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindowViewModel.cs" />

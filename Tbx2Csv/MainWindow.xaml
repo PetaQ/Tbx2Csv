@@ -5,6 +5,11 @@
         xmlns:v="clr-namespace:Tbx2Csv.View"
         Title="{Binding Path=DisplayName}" Height="350" Width="525">
     <Grid>
-        <TextBlock Text="{Binding Path=DisplayName}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="2" FontSize="10" Text="{Binding Path=Tbx2CsvVersion}"></TextBlock>
     </Grid>
 </Window>
