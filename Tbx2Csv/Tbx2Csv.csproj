@@ -72,15 +72,17 @@
     <Compile Include="DataTypes\DepInj.cs" />
     <Compile Include="DataTypes\DepInjection\ILog.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindow.cs" />
+    <Compile Include="DataTypes\DepInjection\INavigationView.cs" />
+    <Compile Include="DataTypes\DepInjection\INavigationViewModel.cs" />
     <Compile Include="Logic\App\AppStatic.cs" />
     <Compile Include="Logic\Logging\Log.cs" />
     <Compile Include="Logic\Tbx\TbxConverter.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\NavigationViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="View\MainView.xaml.cs">
-      <DependentUpon>MainView.xaml</DependentUpon>
+    <Compile Include="View\NavigationView.xaml.cs">
+      <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -94,7 +96,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\MainView.xaml">
+    <Page Include="View\NavigationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

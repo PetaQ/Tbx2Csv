@@ -10,6 +10,7 @@
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
+        <ContentPresenter Content="{Binding Path=NavigationView }"></ContentPresenter>
         <TextBlock Grid.Row="2" FontSize="10" Text="{Binding Path=Tbx2CsvVersion}"></TextBlock>
     </Grid>
 </Window>
