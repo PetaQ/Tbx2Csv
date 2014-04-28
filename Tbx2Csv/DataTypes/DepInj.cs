@@ -37,6 +37,7 @@
         {
             var builder = new ContainerBuilder();
 
+            // Sonstige
             builder.Register<ILog, Log>().ControlledBy<SingletonLifecycle>();
             
             // Views
