@@ -7,6 +7,7 @@
     using Tbx2Csv.DataTypes.DepInjection;
     using Tbx2Csv.Logic.Logging;
     using Tbx2Csv.View;
+    using Tbx2Csv.Services;
 
     public static class DepInj
     {
@@ -39,6 +40,7 @@
 
             // Sonstige
             builder.Register<ILog, Log>().ControlledBy<SingletonLifecycle>();
+            builder.Register<IMessageBus, MessageBus>().ControlledBy<SingletonLifecycle>();
             
             // Views
             builder.Register<IMainWindow, MainWindow>();
@@ -51,6 +53,4 @@
             m_container = builder.Build();
         }
     }
-
-    
 }

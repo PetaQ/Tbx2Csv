@@ -53,6 +53,18 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.4\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.4\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.4\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.4\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,12 +86,14 @@
     <Compile Include="DataTypes\DepInj.cs" />
     <Compile Include="DataTypes\DepInjection\ILog.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindow.cs" />
+    <Compile Include="DataTypes\DepInjection\IMessageBus.cs" />
     <Compile Include="DataTypes\DepInjection\INavigationView.cs" />
     <Compile Include="DataTypes\DepInjection\INavigationViewModel.cs" />
     <Compile Include="Logic\App\AppStatic.cs" />
     <Compile Include="Logic\Logging\Log.cs" />
     <Compile Include="Logic\Tbx\TbxConverter.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindowViewModel.cs" />
+    <Compile Include="Services\MessageBus.cs" />
     <Compile Include="ViewModel\CsvViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\NavigationViewModel.cs" />
@@ -156,9 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTypes\Contracts\" />
+    <Folder Include="DataTypes\Models\" />
     <Folder Include="Logic\Csv\" />
     <Folder Include="Resources\Styles\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

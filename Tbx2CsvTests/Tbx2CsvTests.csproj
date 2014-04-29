@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Catel.Core">
-      <HintPath>..\packages\Catel.Core.3.9.0\lib\net45\Catel.Core.dll</HintPath>
+    <Reference Include="LightCore">
+      <HintPath>..\packages\LightCore.1.5.1\lib\net40\LightCore.dll</HintPath>
+    </Reference>
+    <Reference Include="LightCore.CommonServiceLocator">
+      <HintPath>..\packages\LightCore.1.5.1\lib\net40\LightCore.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="LightCore.Configuration">
+      <HintPath>..\packages\LightCore.1.5.1\lib\net40\LightCore.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\LightCore.1.5.1\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -53,10 +62,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="MessageBusTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tbx2Csv\Tbx2Csv.csproj">
+      <Project>{346a3102-9a26-41d9-bcba-44e718cb9c3a}</Project>
+      <Name>Tbx2Csv</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LightCore.xsd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>
