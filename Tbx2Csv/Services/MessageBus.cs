@@ -6,28 +6,72 @@
     using System.Reactive.Subjects;
     using System.Reactive.Linq;
     
-    public sealed class MessageBus : IMessageBus, IDisposable
+    public sealed class MessageBus : IMessageBus
     {
-        private readonly Subject<object> m_subscribers;
+        private Dictionary<Type, List<object>> m_Subscribers = new Dictionary<Type, List<object>>();
 
-        public MessageBus()
+        /// <summary>
+        ///     Subscribe MessageBus
+        /// </summary>
+        /// <param name="handler"></param>
+        public void Subscribe(Action handler)
         {
-            this.m_subscribers = new Subject<object>();
+            if (this.m_Subscribers.ContainsKey(typeof(string)))
+            {
+                var handlers = this.m_Subscribers[typeof(string)];
+                handlers.Add(handler);
+            }
+            else
+            {
+                var handlers = new List<object>();
+                handlers.Add(handler);
+                this.m_Subscribers[typeof(string)] = handlers;
+            }
         }
 
-        public void Publish<T>(T instance)
+        /// <summary>
+        ///     Unsubscribe MessageBus
+        /// </summary>
+        /// <param name="handler"></param>
+        public void Unsubscribe(Action handler)
         {
-            this.m_subscribers.OnNext(instance);
+            if (this.m_Subscribers.ContainsKey(typeof(string)))
+            {
+                var handlers = this.m_Subscribers[typeof(string)];
+                handlers.Remove(handler);
+
+                if (handlers.Count == 0)
+                {
+                    this.m_Subscribers.Remove(typeof(string));
+                }
+            }
         }
 
-        public IObservable<T> Subscribe<T>()
+        public void Publish<T>(T message)
         {
-            return this.m_subscribers.OfType<T>().AsObservable();
+
         }
-    
-        public void Dispose()
+
+        /// <summary>
+        ///     Publish Message
+        /// </summary>
+        /// <param name="message">Message</param>
+        public void Publish(object message)
         {
-            this.m_subscribers.Dispose();
+            var messageType = message.GetType();
+            if (this.m_Subscribers.ContainsKey(messageType))
+            {
+                var handlers = this.m_Subscribers[messageType];
+                foreach(var handler in handlers)
+                {
+                    var actionType = handler.GetType();
+                    var invoke = actionType.GetMethod("Invoke", new Type[] { messageType });
+                    if (invoke != null)
+                    {
+                        invoke.Invoke(handler, new Object[] { message });
+                    }
+                }
+            }
         }
     }
 }

@@ -1,11 +1,13 @@
 ﻿namespace Tbx2Csv.DataTypes.DepInjection
 {
     using System;
-    
+
     public interface IMessageBus
     {
-        void Publish<T>(T instance);
+        void Subscribe(Action handler);
+        
+        void Unsubscribe(Action handler);
 
-        IObservable<T> Subscribe<T>();
+        void Publish(object message);
     }
 }
