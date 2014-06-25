@@ -11,8 +11,8 @@
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ContentPresenter Content="{Binding Path=NavigationView}"/>
-        <ContentPresenter Content="{Binding Path=ContentView}"/>
+        <ContentPresenter Grid.Row="0" Content="{Binding Path=NavigationView}"/>
+        <ContentPresenter Grid.Row="1" Content="{Binding Path=StartView}"/>
         <TextBlock Grid.Row="2" FontSize="20" Text="{Binding Path=Tbx2CsvVersion}"></TextBlock>
     </Grid>
 </Window>

@@ -2,7 +2,7 @@
 {
     using Tbx2Csv.DataTypes.DepInjection;
 
-    public class NavigationViewModel : ViewModelBase, INavigationViewModel
+    public class NavigationViewModel : ViewModelBase
     {
         public NavigationViewModel()
         {

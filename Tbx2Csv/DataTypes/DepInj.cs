@@ -44,11 +44,9 @@
             
             // Views
             builder.Register<IMainWindow, MainWindow>();
-            builder.Register<INavigationView, NavigationView>();
 
             //ViewModels
             builder.Register<IMainWindowViewModel, MainWindowViewModel>();
-            builder.Register<INavigationViewModel, NavigationViewModel>();
 
             m_container = builder.Build();
         }

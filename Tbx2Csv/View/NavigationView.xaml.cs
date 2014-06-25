@@ -8,18 +8,12 @@
     /// <summary>
     /// Interaktionslogik für NavigationView.xaml
     /// </summary>
-    public partial class NavigationView : UserControl, INavigationView
+    public partial class NavigationView
     {
-        public NavigationView()
+        public NavigationView(NavigationViewModel model)
         {
             InitializeComponent();
-            
-            var viewmodel = DepInj.Container.Resolve<INavigationViewModel>();
-            if (viewmodel != null)
-            {
-                this.DataContext = viewmodel;
-            }
-
+            this.DataContext = model;
         }
     }
 }

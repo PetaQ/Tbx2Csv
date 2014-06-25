@@ -11,15 +11,10 @@
     /// </summary>
     public partial class MainWindow : Window, IMainWindow
     {
-        public MainWindow()
+        public MainWindow(MainWindowViewModel model)
         {
             InitializeComponent();
-
-            var mainviewmodel = DepInj.Container.Resolve<IMainWindowViewModel>();
-            if (mainviewmodel != null)
-            {
-                this.DataContext = mainviewmodel as MainWindowViewModel;
-            }
+            this.DataContext = model;
         }
     }
 }

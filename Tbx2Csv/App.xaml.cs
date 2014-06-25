@@ -26,6 +26,11 @@
                 var mainWindow = (Window)DepInj.Container.Resolve<IMainWindow>();
                 if (mainWindow != null)
                 {
+                    var mainviewmodel = DepInj.Container.Resolve<IMainWindowViewModel>();
+                    if (mainviewmodel != null)
+                    {
+                        mainWindow.DataContext = mainviewmodel as MainWindowViewModel;
+                    }
                     mainWindow.ShowDialog();
                 }
             }

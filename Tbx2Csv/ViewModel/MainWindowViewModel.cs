@@ -14,12 +14,8 @@
         /// </summary>
         private string m_tbx2CsvVersion;
 
-        /// <summary>
-        ///     Field Navigation ViewModel
-        /// </summary>
-        private INavigationView m_navigationView;
-
-        private ContentViewModel m_contentView;
+        private NavigationView m_navigationView;
+        private View.StartView m_startView;
 
         /// <summary>
         ///     Konstruktor
@@ -29,10 +25,7 @@
             this.InitViewModel();
         }
 
-        /// <summary>
-        ///     NavigationViewModel
-        /// </summary>
-        public INavigationView NavigationView
+        public NavigationView NavigationView
         {
             get
             {
@@ -44,6 +37,22 @@
                 {
                     this.m_navigationView = value;
                     this.OnPropertyChanged("NavigationView");
+                }
+            }
+        }
+
+        public StartView StartView
+        {
+            get
+            {
+                return this.m_startView;
+            }
+            set
+            {
+                if (this.m_startView != value)
+                {
+                    this.m_startView = value;
+                    this.OnPropertyChanged("StartView");
                 }
             }
         }
@@ -73,7 +82,12 @@
         private void InitViewModel()
         {
             this.Tbx2CsvVersion = AppStatic.ProductVersion;
-            this.NavigationView = DepInj.Container.Resolve<INavigationView>();
+
+            var navigationViewModel = new NavigationViewModel();
+            this.NavigationView = new NavigationView(navigationViewModel);
+
+            var startViewModel = new StartViewModel();
+            this.StartView = new StartView(startViewModel);
         }
     }
 }

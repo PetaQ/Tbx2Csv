@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top">
             <TextBlock Text="Welcome to TBX2CSV"></TextBlock>
         </StackPanel>
     </Grid>
