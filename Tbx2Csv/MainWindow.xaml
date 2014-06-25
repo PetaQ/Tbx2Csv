@@ -1,16 +1,18 @@
 ﻿<Window x:Class="Tbx2Csv.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="clr-namespace:Tbx2Csv.ViewModel"
-        xmlns:v="clr-namespace:Tbx2Csv.View"
-        Title="{Binding Path=DisplayName}" Height="350" Width="525">
+        Title="Tbx2Csv" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary Source="Styles/BaseStyle.xaml"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ContentPresenter Content="{Binding Path=NavigationView }"></ContentPresenter>
-        <TextBlock Grid.Row="2" FontSize="10" Text="{Binding Path=Tbx2CsvVersion}"></TextBlock>
+        <ContentPresenter Content="{Binding Path=NavigationView}"/>
+        <ContentPresenter Content="{Binding Path=ContentView}"/>
+        <TextBlock Grid.Row="2" FontSize="20" Text="{Binding Path=Tbx2CsvVersion}"></TextBlock>
     </Grid>
 </Window>

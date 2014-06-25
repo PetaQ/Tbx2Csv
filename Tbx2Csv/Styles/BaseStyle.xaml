@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Tbx2Csv.ViewModel"
+                    xmlns:vw="clr-namespace:Tbx2Csv.View">
+    
+    <!-- STYLE -->
+    <Style x:Name="NavigationBackground" TargetType="Grid">
+        <Setter Property="Background" Value="Aqua"/>
+    </Style>
+    
+    <!-- VIEWMODEL DataTemplates -->
+    <DataTemplate x:Name="CsvViewModel" DataType="{x:Type vm:CsvViewModel}">
+        <vw:CsvView/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="TbxViewModel" DataType="{x:Type vm:TbxViewModel}">
+        <vw:TbxView/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="StartViewModel" DataType="{x:Type vm:StartViewModel}">
+        <vw:StartView/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="NavigationViewModel" DataType="{x:Type vm:NavigationViewModel}">
+        <vw:NavigationView/>
+    </DataTemplate>
+    
+</ResourceDictionary>

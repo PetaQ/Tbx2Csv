@@ -1,6 +1,6 @@
 ﻿namespace Tbx2Csv.ViewModel
 {
-    public class CsvViewModel : ViewModelBase
+    public class CsvViewModel : ContentViewModel
     {
         public CsvViewModel()
         {

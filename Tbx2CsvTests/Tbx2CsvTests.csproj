@@ -62,8 +62,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MessageBusTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MessageBusTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tbx2Csv\Tbx2Csv.csproj">

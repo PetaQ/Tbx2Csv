@@ -23,9 +23,11 @@
         {
             try
             {
-               MainWindow = (Window)DepInj.Container.Resolve<IMainWindow>();
-               MainWindow.DataContext = DepInj.Container.Resolve<IMainWindowViewModel>();
-               MainWindow.ShowDialog();
+                var mainWindow = (Window)DepInj.Container.Resolve<IMainWindow>();
+                if (mainWindow != null)
+                {
+                    mainWindow.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -33,7 +35,5 @@
             }
             base.OnStartup(e);
         }
-
-        
     }
 }

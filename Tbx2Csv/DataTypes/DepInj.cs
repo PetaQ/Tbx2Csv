@@ -46,7 +46,7 @@
             builder.Register<IMainWindow, MainWindow>();
             builder.Register<INavigationView, NavigationView>();
 
-            // ViewModels
+            //ViewModels
             builder.Register<IMainWindowViewModel, MainWindowViewModel>();
             builder.Register<INavigationViewModel, NavigationViewModel>();
 
