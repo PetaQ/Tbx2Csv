@@ -6,9 +6,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        <ResourceDictionary Source="../Styles/BaseStyle.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/BaseStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <TextBlock VerticalAlignment="Top" Text="{Binding Path=DisplayName}"></TextBlock>
+        <ListBox x:Name="MenuBar"
+                 ItemsSource="{Binding Path=NavigationMenuList}"
+                 SelectedItem="{Binding Path=SelectedNavigationMenu}">
+            <ListBox.ItemTemplate>
+                <DataTemplate x:Name="NavigationItemTemplate">
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

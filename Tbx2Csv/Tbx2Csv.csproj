@@ -93,8 +93,10 @@
     <Compile Include="Logic\Logging\Log.cs" />
     <Compile Include="Logic\Tbx\TbxConverter.cs" />
     <Compile Include="DataTypes\DepInjection\IMainWindowViewModel.cs" />
+    <Compile Include="Model\NavigationModel.cs" />
     <Compile Include="Services\DispatcherService.cs" />
     <Compile Include="Services\MessageBus.cs" />
+    <Compile Include="Services\RelayCommand.cs" />
     <Compile Include="ViewModel\ContentViewModel.cs" />
     <Compile Include="ViewModel\Content\CsvViewModel.cs" />
     <Compile Include="ViewModel\Content\StartViewModel.cs" />

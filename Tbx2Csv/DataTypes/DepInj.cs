@@ -48,6 +48,8 @@
             //ViewModels
             builder.Register<IMainWindowViewModel, MainWindowViewModel>();
 
+           
+
             m_container = builder.Build();
         }
     }

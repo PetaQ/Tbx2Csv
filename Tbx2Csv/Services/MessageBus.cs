@@ -8,6 +8,9 @@
     
     public sealed class MessageBus : IMessageBus
     {
+        /// <summary>
+        ///     Subscribers List
+        /// </summary>
         private Dictionary<Type, List<object>> m_Subscribers = new Dictionary<Type, List<object>>();
 
         /// <summary>
@@ -47,6 +50,11 @@
             }
         }
 
+        /// <summary>
+        ///     Publish Message
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="message"></param>
         public void Publish<T>(T message)
         {
 

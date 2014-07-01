@@ -23,6 +23,8 @@
         public MainWindowViewModel()
         {
             this.InitViewModel();
+
+            DepInj.Container.Resolve<IMessageBus>().Subscribe(this.ChangeView);
         }
 
         public NavigationView NavigationView
@@ -74,6 +76,11 @@
                     this.OnPropertyChanged("Tbx2CsvVersion");
                 }
             }
+        }
+
+        public void ChangeView()
+        {
+
         }
 
         /// <summary>
