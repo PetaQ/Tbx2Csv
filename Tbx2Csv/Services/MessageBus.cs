@@ -57,7 +57,20 @@
         /// <param name="message"></param>
         public void Publish<T>(T message)
         {
-
+            var messageType = message.GetType();
+            if (this.m_Subscribers.ContainsKey(messageType))
+            {
+                var handlers = this.m_Subscribers[messageType];
+                foreach (var handler in handlers)
+                {
+                    var actionType = handler.GetType();
+                    var invoke = actionType.GetMethod("Invoke", new Type[] { messageType });
+                    if (invoke != null)
+                    {
+                        invoke.Invoke(handler, new Object[] { message });
+                    }
+                }
+            }
         }
 
         /// <summary>
